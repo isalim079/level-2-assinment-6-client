@@ -3,6 +3,8 @@
 import { featuredRecipeData } from "@/utils/SectionData/SectionData";
 import Image from "next/image";
 import { useState } from "react";
+import anim from '@/assets/animation/featuredRecipe.json'
+import Lottie from "lottie-react";
 
 const FeaturedRecipe = () => {
 
@@ -31,21 +33,23 @@ const FeaturedRecipe = () => {
           {featuredRecipeData?.map((item, index) => (
             <div
               key={index}
-              className={`flex justify-between bg-light-green p-7 rounded-md shadow-sm cursor-pointer ${isHovered === index && '-translate-y-3 transition-all duration-300 ease-in-out'}`}
+              className={`grid grid-cols-8 gap-5 items-center bg-light-green p-7 rounded-md shadow-sm cursor-pointer ${isHovered === index && '-translate-y-3 transition-all duration-300 ease-in-out'}`}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
             >
-              <div>
+              <div className="col-span-6">
                 <h1 className="text-dark-green font-bold lg:text-xl mb-4">
                   {item.name}
                 </h1>
-                <p className="lg:max-w-[80%] text-dark-green">
+                <p className=" text-dark-green">
                   {item.description}
                 </p>
+                <Lottie className="w-14 mt-4" animationData={anim} />
               </div>
               <Image
+              
                 src={item.image}
-                className={`${isHovered === index && 'shadow-md p-3 rounded-lg bg-dark-green transition-all duration-300 ease-in-out'}`}
+                className={`${isHovered === index && 'shadow-md p-3 rounded-lg bg-dark-green transition-all duration-300 ease-in-out'} col-span-2 `}
                 alt={item.name}
                 width={100}
                 height={100}
