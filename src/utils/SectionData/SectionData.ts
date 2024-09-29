@@ -28,3 +28,61 @@ export const featuredRecipeData = [
     image: "https://i.ibb.co.com/qgNTP5B/featured-Recipe4.png",
   },
 ];
+
+export const topContributorsData = [
+  {
+    id: 1,
+    username: "ChefJohn",
+    profileImage: "https://i.ibb.co.com/jDyfs45/free-photo-of-smiling-elderly-woman-on-bustling-street.jpg",
+    recipesPosted: 45,
+    upvotes: 320,
+    featuredRecipe: {
+      name: "Spicy Chicken Tacos",
+      image: "https://i.ibb.co.com/jDyfs45/free-photo-of-smiling-elderly-woman-on-bustling-street.jpg",
+    },
+  },
+  {
+    id: 2,
+    username: "VeganQueen",
+    profileImage: "https://i.ibb.co.com/3MGN4cS/free-photo-of-elderly-man-sitting-on-a-park-bench-outdoors.jpg",
+    recipesPosted: 32,
+    upvotes: 275,
+    featuredRecipe: {
+      name: "Vegan Buddha Bowl",
+      image: "https://i.ibb.co.com/3MGN4cS/free-photo-of-elderly-man-sitting-on-a-park-bench-outdoors.jpg",
+    },
+  },
+  {
+    id: 3,
+    username: "BakeMasterTom",
+    profileImage: "https://i.ibb.co.com/RbfJFH3/pexels-photo-2531552.jpg",
+    recipesPosted: 28,
+    upvotes: 215,
+    featuredRecipe: {
+      name: "Chocolate Chip Cookies",
+      image: "https://i.ibb.co.com/RbfJFH3/pexels-photo-2531552.jpg",
+    },
+  },
+  {
+    id: 4,
+    username: "SpiceLoverAnna",
+    profileImage: "https://i.ibb.co.com/RbfJFH3/pexels-photo-2531552.jpg",
+    recipesPosted: 39,
+    upvotes: 350,
+    featuredRecipe: {
+      name: "Curry Lentil Soup",
+      image: "https://i.ibb.co.com/RbfJFH3/pexels-photo-2531552.jpg",
+    },
+  },
+  {
+    id: 5,
+    username: "HealthyChefMike",
+    profileImage: "https://i.ibb.co.com/4N7GsPp/pexels-photo-1520760.jpg",
+    recipesPosted: 50,
+    upvotes: 400,
+    featuredRecipe: {
+      name: "Grilled Salmon with Quinoa",
+      image: "https://i.ibb.co.com/4N7GsPp/pexels-photo-1520760.jpg",
+    },
+  },
+];
