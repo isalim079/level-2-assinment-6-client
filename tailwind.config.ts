@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -8,12 +9,21 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        poppins: "'Poppins', system-ui",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "primary-white": "#FFF7EE",
+        "light-green": "#E3E986",
+        "dark-green": "#005D32",
+        "primary-orange": "#F6C021",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('daisyui'),
+  ],
 };
 export default config;
