@@ -59,7 +59,7 @@ export const topContributorsData = [
     recipesPosted: 28,
     upvotes: 215,
     featuredRecipe: {
-      name: "Chocolate Chip Cookies",
+      name: "Chocolate Chip",
       image: "https://i.ibb.co.com/RbfJFH3/pexels-photo-2531552.jpg",
     },
   },

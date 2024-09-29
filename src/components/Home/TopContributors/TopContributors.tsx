@@ -53,7 +53,7 @@ const TopContributors = () => {
                     {item.featuredRecipe.name}
                   </p>
                 </div>
-                <div className=" mt-6 lg:mt-14 flex justify-center mb-10 lg:mb-0">
+                <div className=" mt-10 lg:mt-14 flex justify-center mb-10 lg:mb-0">
                   <button className="bg-dark-green text-primary-white px-4 py-3 rounded-md flex items-center gap-3 hover:border hover:border-primary-white hover:shadow-md transition-all duration-300 ease-in-out">
                     More Recipe
                     <BsArrowRightCircle className="text-primary-white text-xl" />
