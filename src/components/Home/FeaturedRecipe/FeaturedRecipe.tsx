@@ -3,19 +3,18 @@
 import { featuredRecipeData } from "@/utils/SectionData/SectionData";
 import Image from "next/image";
 import { useState } from "react";
-import anim from '@/assets/animation/featuredRecipe.json'
+import anim from "@/assets/animation/featuredRecipe.json";
 import Lottie from "lottie-react";
 
 const FeaturedRecipe = () => {
+  const [isHovered, setIsHovered] = useState<number | null>(null);
 
-    const [isHovered, setIsHovered] = useState<number | null>(null)
-
-    const handleMouseEnter = (index: number) => {
-        setIsHovered(index)
-    }
-    const handleMouseLeave = () => {
-        setIsHovered(null)
-    }
+  const handleMouseEnter = (index: number) => {
+    setIsHovered(index);
+  };
+  const handleMouseLeave = () => {
+    setIsHovered(null);
+  };
 
   return (
     <div className="bg-primary-white font-poppins py-16 lg:py-28 px-6 lg:px-0">
@@ -29,27 +28,33 @@ const FeaturedRecipe = () => {
             community.
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-14 mt-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 mt-16">
           {featuredRecipeData?.map((item, index) => (
             <div
               key={index}
-              className={`grid grid-cols-8 gap-5 items-center bg-light-green p-7 rounded-md shadow-sm cursor-pointer ${isHovered === index && '-translate-y-3 transition-all duration-300 ease-in-out'}`}
+              className={`grid grid-cols-8 gap-5 items-center bg-light-green p-7 rounded-md shadow-sm cursor-pointer ${
+                isHovered === index &&
+                "-translate-y-3 transition-all duration-300 ease-in-out"
+              }`}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
             >
-              <div className="col-span-6">
+              <div className="lg:col-span-6 col-span-8">
                 <h1 className="text-dark-green font-bold lg:text-xl mb-4">
                   {item.name}
                 </h1>
-                <p className=" text-dark-green">
-                  {item.description}
-                </p>
-                <Lottie className="w-14 mt-4" animationData={anim} />
+                <p className=" text-dark-green">{item.description}</p>
+                <Lottie
+                  className="w-14 mt-4 hidden lg:block"
+                  animationData={anim}
+                />
               </div>
               <Image
-              
                 src={item.image}
-                className={`${isHovered === index && 'shadow-md p-3 rounded-lg bg-dark-green transition-all duration-300 ease-in-out'} col-span-2 `}
+                className={`${
+                  isHovered === index &&
+                  "shadow-md p-3 rounded-lg bg-dark-green transition-all duration-300 ease-in-out"
+                } lg:col-span-2 col-span-8 mx-auto`}
                 alt={item.name}
                 width={100}
                 height={100}
