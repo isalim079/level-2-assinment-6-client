@@ -2,6 +2,7 @@
 import bg from "@/assets/Img/loginBg.jpg";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Login = () => {
   return (
@@ -73,6 +74,18 @@ const Login = () => {
               >
                 Login
               </motion.button>
+              <motion.div className="mt-4"
+              initial={{opacity: 0}}
+              animate={{opacity: 1}}
+              transition={{duration: 1, delay: 0.12, type: "spring"}}
+              >
+                <p className="text-center text-primary-white text-sm">
+                  Don't have an account?{" "}
+                  <Link href={"/register"}>
+                    <span className="text-base underline">Register</span>
+                  </Link>
+                </p>
+              </motion.div>
             </form>
           </div>
         </div>

@@ -7,10 +7,10 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-hidden absolute z-30 bg-primary-white/70 w-full">
       <div className="max-w-screen-xl mx-auto">
-        <div className="navbar py-4 absolute  max-w-screen-xl justify-between">
-          <div className="navbar-start justify-between lg:justify-start  w-full">
+        <div className="navbar py-2 max-w-screen-xl justify-between">
+          <div className="navbar-start justify-between lg:justify-start  ">
             <div className="dropdown">
               <div
                 tabIndex={0}
@@ -43,11 +43,13 @@ const Navbar = () => {
               </ul>
             </div>
             <div>
+              <Link href={'/'}>
               <Image
                 src={logo}
                 alt="logo"
-                className="lg:w-20 w-16 mr-4 lg:mr-0"
+                className="lg:w-14 w-16 mr-4 lg:mr-0"
               />
+              </Link>
             </div>
           </div>
           <div className="navbar-center hidden lg:flex ">
