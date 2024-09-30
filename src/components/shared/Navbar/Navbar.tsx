@@ -3,6 +3,7 @@
 import Image from "next/image";
 import logo from "@/assets/logo.png";
 import { CgMenu } from "react-icons/cg";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -73,9 +74,10 @@ const Navbar = () => {
             </ul>
           </div>
           <div className=" hidden lg:block">
+            <Link href={'/login'}>
             <button className="bg-dark-green text-primary-white px-4 py-2 rounded-md shadow-sm">
               Login
-            </button>
+            </button></Link>
           </div>
         </div>
       </div>
