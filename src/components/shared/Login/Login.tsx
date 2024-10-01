@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Login = () => {
   return (
-    <div className="font-poppins overflow-x-hidden">
+    <div className="font-poppins overflow-hidden">
       <div className="relative">
         <Image
           className="h-screen object-cover"
