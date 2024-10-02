@@ -3,25 +3,25 @@ import bg from "@/assets/Img/loginBg.jpg";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+
 import { FaFileUpload } from "react-icons/fa";
 
 const Register = () => {
 
-    const [file, setFile] = useState(null);
+
 
   return (
     <div className="font-poppins overflow-hidden">
-      <div className="relative">
-        <Image
+      <div className="relative -z-50">
+        {/* <Image
           className="h-screen object-cover"
           src={bg}
           alt="Register background"
-        />
+        /> */}
         <div className="absolute inset-0">
           <div className="flex justify-center items-center h-screen">
             {/* form container */}
-            <form className="flex flex-col  bg-dark-green/70 max-w-[480px] w-full p-14 rounded-md">
+            <form className="flex flex-col  bg-dark-green/70 max-w-[480px] w-full p-6 lg:p-14 rounded-md">
               <motion.h1
                 className="text-center text-3xl font-bold text-primary-orange"
                 initial={{ y: -750 }}

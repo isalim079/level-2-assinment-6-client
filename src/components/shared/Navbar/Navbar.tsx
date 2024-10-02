@@ -9,77 +9,57 @@ const Navbar = () => {
   return (
     <div className="overflow-hidden absolute z-30 bg-primary-white/70 w-full">
       <div className="max-w-screen-xl mx-auto">
-        <div className="navbar py-2 max-w-screen-xl justify-between">
-          <div className="navbar-start justify-between lg:justify-start  ">
-            <div className="dropdown">
-              <div
-                tabIndex={0}
-                role="button"
-                className="btn btn-ghost lg:hidden"
-              >
-                <CgMenu className="text-2xl" />
+        <div className="drawer">
+          <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
+          <div className="drawer-content flex flex-col">
+            {/* Navbar */}
+            <div className="navbar w-full ">
+              <div className="flex-none lg:hidden ">
+                <label
+                  htmlFor="my-drawer-3"
+                  aria-label="open sidebar"
+                  className="btn btn-square btn-ghost"
+                >
+                  <CgMenu className="text-2xl" />
+                </label>
               </div>
-              <ul
-                tabIndex={0}
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-              >
-                <li>
-                  <a>Item 1</a>
-                </li>
-                <li>
-                  <a>Parent</a>
-                  <ul className="p-2">
-                    <li>
-                      <a>Submenu 1</a>
-                    </li>
-                    <li>
-                      <a>Submenu 2</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a>Item 3</a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <Link href={'/'}>
-              <Image
-                src={logo}
-                alt="logo"
-                className="lg:w-14 w-16 mr-4 lg:mr-0"
-              />
-              </Link>
+              <div className="mx-2 flex-1 px-2  justify-end lg:justify-start">
+                <Link href={"/"}>
+                  <Image className="w-14" src={logo} alt="logo" />
+                </Link>
+              </div>
+              <div className="hidden flex-none lg:block">
+                <ul className="menu menu-horizontal items-center">
+                  {/* Navbar menu content here */}
+                  <li>
+                    <a>Item 1</a>
+                  </li>
+                  <li>
+                    <Link href={"/register"}>
+                      <button className="px-4 py-2 rounded-md bg-dark-green shadow-sm text-primary-white">
+                        Register
+                      </button>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div className="navbar-center hidden lg:flex ">
-            <ul className="menu menu-horizontal px-1">
+          <div className="drawer-side">
+            <label
+              htmlFor="my-drawer-3"
+              aria-label="close sidebar"
+              className="drawer-overlay"
+            ></label>
+            <ul className="menu bg-base-200 min-h-full w-80 p-4">
+              {/* Sidebar content here */}
               <li>
-                <a>Item 1</a>
+                <a>Sidebar Item 1</a>
               </li>
               <li>
-                <details>
-                  <summary>Parent</summary>
-                  <ul className="p-2">
-                    <li>
-                      <a>Submenu 1</a>
-                    </li>
-                    <li>
-                      <a>Submenu 2</a>
-                    </li>
-                  </ul>
-                </details>
-              </li>
-              <li>
-                <a>Item 3</a>
+                <a>Sidebar Item 2</a>
               </li>
             </ul>
-          </div>
-          <div className=" hidden lg:block">
-            <Link href={'/login'}>
-            <button className="bg-dark-green text-primary-white px-4 py-2 rounded-md shadow-sm">
-              Login
-            </button></Link>
           </div>
         </div>
       </div>
