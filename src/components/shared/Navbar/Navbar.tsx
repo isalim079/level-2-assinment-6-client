@@ -34,13 +34,14 @@ const Navbar = () => {
                   <li>
                     <a>Item 1</a>
                   </li>
-                  <li>
+                 
+                    <div>
                     <Link href={"/register"}>
                       <button className="px-4 py-2 rounded-md bg-dark-green shadow-sm text-primary-white">
                         Register
                       </button>
                     </Link>
-                  </li>
+                    </div>
                 </ul>
               </div>
             </div>

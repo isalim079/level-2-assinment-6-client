@@ -13,11 +13,11 @@ const Register = () => {
   return (
     <div className="font-poppins overflow-hidden">
       <div className="relative -z-50">
-        {/* <Image
+        <Image
           className="h-screen object-cover"
           src={bg}
           alt="Register background"
-        /> */}
+        />
         <div className="absolute inset-0">
           <div className="flex justify-center items-center h-screen">
             {/* form container */}
