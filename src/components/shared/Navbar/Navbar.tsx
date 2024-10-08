@@ -1,11 +1,49 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import Image from "next/image";
 import logo from "@/assets/logo.png";
 import { CgMenu } from "react-icons/cg";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { logout, selectCurrentUser } from "@/redux/features/auth/authSlice";
+import { signOut } from "next-auth/react";
+import { registerUser } from "@/utils/actions/registerUser";
+import toast from "react-hot-toast";
 
-const Navbar = () => {
+const Navbar = ({ session }: { session: any }) => {
+  const user = useSelector(selectCurrentUser);
+
+  const dispatch = useDispatch();
+
+  try {
+    const handleSocialLogin = async () => {
+      const userInfo = await session?.user;
+      if (userInfo) {
+        const userDetails = {
+          name: session.user.name,
+          email: session.user.email,
+          password: "123456",
+          image: session.user.image,
+          role: "user",
+          address: "Default Address",
+        };
+
+        const res = await registerUser(userDetails);
+        if (res.success) {
+          toast.success("User logged in successfully");
+        }
+      }
+    };
+    handleSocialLogin();
+  } catch (error) {
+    console.log(error);
+  }
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
+
   return (
     <div className="overflow-hidden absolute z-30 bg-primary-white/70 w-full">
       <div className="max-w-screen-xl mx-auto">
@@ -34,14 +72,37 @@ const Navbar = () => {
                   <li>
                     <a>Item 1</a>
                   </li>
-                 
-                    <div>
-                    <Link href={"/register"}>
-                      <button className="px-4 py-2 rounded-md bg-dark-green shadow-sm text-primary-white">
-                        Register
-                      </button>
-                    </Link>
-                    </div>
+
+                  <div>
+                    {user?.userInfo || session?.user ? (
+                      <div className="">
+                        <Link href={"/dashboard"}>
+                          <button className="px-4 py-2 rounded-md bg-dark-green shadow-sm text-primary-white mr-4">
+                            Dashboard
+                          </button>
+                        </Link>
+                        <Link href={"/register"}>
+                          <button
+                            onClick={() => {
+                              signOut();
+                              handleLogout();
+                            }}
+                            className="px-4 py-2 rounded-md bg-dark-green shadow-sm text-primary-white"
+                          >
+                            Logout
+                          </button>
+                        </Link>
+                      </div>
+                    ) : (
+                      <div>
+                        <Link href={"/login"}>
+                          <button className="px-4 py-2 rounded-md bg-dark-green shadow-sm text-primary-white">
+                            Login
+                          </button>
+                        </Link>
+                      </div>
+                    )}
+                  </div>
                 </ul>
               </div>
             </div>

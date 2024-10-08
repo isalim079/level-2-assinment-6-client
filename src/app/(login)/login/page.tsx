@@ -1,9 +1,11 @@
 import Login from "@/components/shared/Login/Login";
 
-const LoginPage = () => {
+
+const LoginPage = async () => {
+
     return (
         <div>
-            <Login />
+            <Login  />
         </div>
     );
 };

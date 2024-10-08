@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 // import localFont from "next/font/local";
 import "./globals.css";
+import ClientWrapper from "@/lib/ClientWrapper/ClientWrapper";
+
 
 export const metadata: Metadata = {
   title: "Chef",
@@ -15,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="light">
       <body>
-        <div>{children}</div>
+     <ClientWrapper>
+      {children}
+     </ClientWrapper>
       </body>
     </html>
   );
