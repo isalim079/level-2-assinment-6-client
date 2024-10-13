@@ -6,10 +6,13 @@ import logo from "@/assets/logo.png";
 import { CgMenu } from "react-icons/cg";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
-import { logout, selectCurrentUser } from "@/redux/features/auth/authSlice";
+import {
+  logout,
+  selectCurrentUser,
+  setUser,
+} from "@/redux/features/auth/authSlice";
 import { signOut } from "next-auth/react";
 import { registerUser } from "@/utils/actions/registerUser";
-import toast from "react-hot-toast";
 
 const Navbar = ({ session }: { session: any }) => {
   const user = useSelector(selectCurrentUser);
@@ -19,6 +22,7 @@ const Navbar = ({ session }: { session: any }) => {
   try {
     const handleSocialLogin = async () => {
       const userInfo = await session?.user;
+
       if (userInfo) {
         const userDetails = {
           name: session.user.name,
@@ -29,9 +33,10 @@ const Navbar = ({ session }: { session: any }) => {
           address: "Default Address",
         };
 
-        const res = await registerUser(userDetails);
-        if (res.success) {
-          toast.success("User logged in successfully");
+        await registerUser(userDetails);
+
+        if (session?.user) {
+          dispatch(setUser({ user: { socialUser: userDetails }, token: "" }));
         }
       }
     };

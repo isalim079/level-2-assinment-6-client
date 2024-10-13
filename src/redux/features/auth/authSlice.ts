@@ -10,6 +10,8 @@ export type TUser = {
     role: string;
     iat: number;
     exp: number;
+    image?: string;
+    name?:string;
   };
   userInfo: {
     address: string;
