@@ -21,9 +21,11 @@ const config: Config = {
         "primary-orange": "#F6C021",
       },
     },
+    
   },
   plugins: [
     require('daisyui'),
+    require('@tailwindcss/typography'),
   ],
 };
 export default config;

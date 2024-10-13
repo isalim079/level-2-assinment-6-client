@@ -72,10 +72,10 @@ const Navbar = ({ session }: { session: any }) => {
                 </Link>
               </div>
               <div className="hidden flex-none lg:block">
-                <ul className="menu menu-horizontal items-center">
+                <ul className="menu menu-horizontal items-center font-semibold">
                   {/* Navbar menu content here */}
                   <li>
-                    <a>Item 1</a>
+                    <Link href={'/recipe-feed'}>Recipe Feed</Link>
                   </li>
 
                   <div>
